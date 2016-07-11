@@ -15,10 +15,13 @@
 		5C80AAA11AAB717100F21FFA /* ARTCRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C80AAA01AAB717100F21FFA /* ARTCRoomViewController.m */; };
 		5C80AAA61AAB71C700F21FFA /* ARTCVideoChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C80AAA51AAB71C700F21FFA /* ARTCVideoChatViewController.m */; };
 		5C80AAAA1AAB788A00F21FFA /* ARTCRoomTextInputViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C80AAA91AAB788A00F21FFA /* ARTCRoomTextInputViewCell.m */; };
-		65B60C96FF584964C27562A6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDADA2C0C3A5199BC24EF352 /* libPods.a */; };
+		D73F18E19C9C60BA3AEC6533 /* libPods-AppRTC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F721CD5337114122AA5E1F /* libPods-AppRTC.a */; };
+		F4897AE81D3348880071C72A /* WebSocketConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = F4897AE71D3348880071C72A /* WebSocketConnection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04692537284C82CE1E62128E /* Pods-AppRTC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppRTC.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppRTC/Pods-AppRTC.release.xcconfig"; sourceTree = "<group>"; };
+		57F721CD5337114122AA5E1F /* libPods-AppRTC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppRTC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C80AA761AAB5DF300F21FFA /* AppRTC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppRTC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C80AA7A1AAB5DF300F21FFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C80AA7B1AAB5DF300F21FFA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -33,9 +36,9 @@
 		5C80AAA51AAB71C700F21FFA /* ARTCVideoChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARTCVideoChatViewController.m; sourceTree = "<group>"; };
 		5C80AAA81AAB788A00F21FFA /* ARTCRoomTextInputViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARTCRoomTextInputViewCell.h; sourceTree = "<group>"; };
 		5C80AAA91AAB788A00F21FFA /* ARTCRoomTextInputViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARTCRoomTextInputViewCell.m; sourceTree = "<group>"; };
-		A91A157833594B50E74E767F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		B6DABCBD6F43FEC6530D36B2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		EDADA2C0C3A5199BC24EF352 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7B527EEFE3254C4A6BFA40B /* Pods-AppRTC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppRTC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppRTC/Pods-AppRTC.debug.xcconfig"; sourceTree = "<group>"; };
+		F4897AE61D3348870071C72A /* WebSocketConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSocketConnection.h; sourceTree = "<group>"; };
+		F4897AE71D3348880071C72A /* WebSocketConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebSocketConnection.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,28 +46,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65B60C96FF584964C27562A6 /* libPods.a in Frameworks */,
+				D73F18E19C9C60BA3AEC6533 /* libPods-AppRTC.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1148D91C97037D5C1CF3115B /* Frameworks */ = {
+		5C6B7E47DBCCE1522C5BAE72 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EDADA2C0C3A5199BC24EF352 /* libPods.a */,
+				57F721CD5337114122AA5E1F /* libPods-AppRTC.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		4DD24E6966F906824AE26A91 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				A91A157833594B50E74E767F /* Pods.debug.xcconfig */,
-				B6DABCBD6F43FEC6530D36B2 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		5C80AA6D1AAB5DF300F21FFA = {
@@ -72,8 +66,8 @@
 			children = (
 				5C80AA781AAB5DF300F21FFA /* AppRTC */,
 				5C80AA771AAB5DF300F21FFA /* Products */,
-				4DD24E6966F906824AE26A91 /* Pods */,
-				1148D91C97037D5C1CF3115B /* Frameworks */,
+				5D21E71C4602827F160A0999 /* Pods */,
+				5C6B7E47DBCCE1522C5BAE72 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,6 +107,8 @@
 				5C80AA831AAB5DF300F21FFA /* Main.storyboard */,
 				5C80AA861AAB5DF300F21FFA /* Images.xcassets */,
 				5C80AA881AAB5DF300F21FFA /* LaunchScreen.xib */,
+				F4897AE61D3348870071C72A /* WebSocketConnection.h */,
+				F4897AE71D3348880071C72A /* WebSocketConnection.m */,
 			);
 			name = App;
 			sourceTree = "<group>";
@@ -137,6 +133,15 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		5D21E71C4602827F160A0999 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C7B527EEFE3254C4A6BFA40B /* Pods-AppRTC.debug.xcconfig */,
+				04692537284C82CE1E62128E /* Pods-AppRTC.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,12 +149,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5C80AA991AAB5DF300F21FFA /* Build configuration list for PBXNativeTarget "AppRTC" */;
 			buildPhases = (
-				24ABD54F0D4EF6CABF005175 /* Check Pods Manifest.lock */,
+				6156C827DEA0578ECE6853D7 /* [CP] Check Pods Manifest.lock */,
 				5C80AA721AAB5DF300F21FFA /* Sources */,
 				5C80AA731AAB5DF300F21FFA /* Frameworks */,
 				5C80AA741AAB5DF300F21FFA /* Resources */,
-				50BFB4AA9193C934A869E7DE /* Copy Pods Resources */,
-				9C05033E66DB5BAA7FBF7700 /* Embed Pods Frameworks */,
+				42C0F2C0FF29D32E8FC72837 /* [CP] Embed Pods Frameworks */,
+				8A03BC0E8A60E520AEB8E396 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -166,11 +171,12 @@
 		5C80AA6E1AAB5DF300F21FFA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = ISBX;
 				TargetAttributes = {
 					5C80AA751AAB5DF300F21FFA = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = Z5PW237P85;
 					};
 				};
 			};
@@ -206,14 +212,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		24ABD54F0D4EF6CABF005175 /* Check Pods Manifest.lock */ = {
+		42C0F2C0FF29D32E8FC72837 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AppRTC/Pods-AppRTC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6156C827DEA0578ECE6853D7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,34 +242,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		50BFB4AA9193C934A869E7DE /* Copy Pods Resources */ = {
+		8A03BC0E8A60E520AEB8E396 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9C05033E66DB5BAA7FBF7700 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AppRTC/Pods-AppRTC-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -259,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C80AAAA1AAB788A00F21FFA /* ARTCRoomTextInputViewCell.m in Sources */,
+				F4897AE81D3348880071C72A /* WebSocketConnection.m in Sources */,
 				5C80AAA61AAB71C700F21FFA /* ARTCVideoChatViewController.m in Sources */,
 				5C80AAA11AAB717100F21FFA /* ARTCRoomViewController.m in Sources */,
 				5C80AA7F1AAB5DF300F21FFA /* AppDelegate.m in Sources */,
@@ -309,6 +316,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -370,31 +378,39 @@
 		};
 		5C80AA9A1AAB5DF300F21FFA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A91A157833594B50E74E767F /* Pods.debug.xcconfig */;
+			baseConfigurationReference = C7B527EEFE3254C4A6BFA40B /* Pods-AppRTC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = AppRTC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Lib",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = nz.ac.canterbury.AppRTC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
 		5C80AA9B1AAB5DF300F21FFA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B6DABCBD6F43FEC6530D36B2 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 04692537284C82CE1E62128E /* Pods-AppRTC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = AppRTC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Lib",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = nz.ac.canterbury.AppRTC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
