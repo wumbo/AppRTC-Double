@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+#import <SIOSocket/SIOSocket.h>
+
 @interface WebSocketConnection : NSObject
+
+@property SIOSocket *socket;
+
+- (id) init;
 
 @end
