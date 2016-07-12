@@ -7,6 +7,7 @@ PODS:
 
 DEPENDENCIES:
   - AppRTC (from `.`)
+  - SocketRocket
 
 EXTERNAL SOURCES:
   AppRTC:
@@ -17,6 +18,6 @@ SPEC CHECKSUMS:
   libjingle_peerconnection: 96592d7e75876776f6a7c21267926a132effc3cc
   SocketRocket: ffe08119b00ef982f6c37052a4705a057c8494ad
 
-PODFILE CHECKSUM: 7e29fc1c881c1463fc5cddcddb884fcd84b48f08
+PODFILE CHECKSUM: e1f34153ce0f45e9b9cbd047aca7dcf52ee8e599
 
 COCOAPODS: 1.0.1
