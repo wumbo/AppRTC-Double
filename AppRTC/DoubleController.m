@@ -7,6 +7,9 @@
 //
 
 #import "DoubleController.h"
+#import <UIKit/UIKit.h>
+
+#pragma mark - Control State
 
 /* Used to indicate whether a specific direction is active or not (start/stop)
  */
@@ -38,6 +41,8 @@ typedef enum {
 }
 
 @end
+
+#pragma mark - DoubleController
 
 @interface DoubleController ()
 
@@ -101,20 +106,37 @@ typedef enum {
         if ([command isEqualToString:@"start"]) {
             self.controlState.left = ACTIVE;
         } else if ([command isEqualToString:@"stop"]) {
-            self.controlState.right = INACTIVE;
+            self.controlState.left = INACTIVE;
         }
     } else if ((command = [control valueForKey:@"right"])) {
         NSLog(@"right");
         NSLog(@"%@", command);
         
         if ([command isEqualToString:@"start"]) {
-            self.controlState.forward = ACTIVE;
+            self.controlState.right = ACTIVE;
         } else if ([command isEqualToString:@"stop"]) {
-            self.controlState.forward = INACTIVE;
+            self.controlState.right = INACTIVE;
         }
+    } else if ((command = [control valueForKey:@"kickstand"])) {
+        NSLog(@"kickstand");
+        NSLog(@"%@", command);
+        
+        if ([command isEqualToString:@"deploy"]) {
+            [[DRDouble sharedDouble] deployKickstands];
+        } else if ([command isEqualToString:@"retract"]) {
+            [[DRDouble sharedDouble] retractKickstands];
+        }
+    } else {
+        NSLog(@"%@", control);
     }
 }
 
+#pragma mark - DRDoubleDelegate
 
+- (void)doubleDriveShouldUpdate:(DRDouble *)theDouble {
+    float drive = (self.controlState.forward == ACTIVE) ? kDRDriveDirectionForward : ((self.controlState.backward == ACTIVE) ? kDRDriveDirectionBackward : kDRDriveDirectionStop);
+    float turn = (self.controlState.right == ACTIVE) ? 1.0 : ((self.controlState.left == ACTIVE) ? -1.0 : 0.0);
+    [theDouble drive:drive turn:turn];
+}
 
 @end
