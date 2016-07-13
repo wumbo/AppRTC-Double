@@ -8,7 +8,7 @@
 
 #import "ARTCVideoChatViewController.h"
 #import <AVFoundation/AVFoundation.h>
-#import "WebSocketConnection.h"
+#import "DoubleController.h"
 
 #define SERVER_HOST_URL @"https://apprtc.appspot.com"
 
@@ -45,7 +45,7 @@
                                                  name:@"UIDeviceOrientationDidChangeNotification"
                                                object:nil];
     
-    WebSocketConnection *wsconnection = [[WebSocketConnection alloc] init];
+    DoubleController *doubleController = [[DoubleController alloc] init];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

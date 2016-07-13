@@ -9,10 +9,9 @@
 #import <Foundation/Foundation.h>
 
 #import <SIOSocket/SIOSocket.h>
+#import "DoubleControlSDK/DoubleControlSDK.h"
 
-@interface WebSocketConnection : NSObject
-
-@property SIOSocket *socket;
+@interface DoubleController : NSObject <DRDoubleDelegate>
 
 - (id) init;
 
