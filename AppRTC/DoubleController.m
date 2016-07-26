@@ -60,7 +60,7 @@ typedef enum {
         
         self.controlState = [[ControlState alloc] init];
         
-        [SIOSocket socketWithHost: @"http://csse-s402g2.canterbury.ac.nz:3000" response: ^(SIOSocket *socket) {
+        [SIOSocket socketWithHost: @"http://csse-s402g2.canterbury.ac.nz:8443" response: ^(SIOSocket *socket) {
             self.socket = socket;
             __weak typeof(self) weakSelf = self;
             self.socket.onConnect = ^() {
