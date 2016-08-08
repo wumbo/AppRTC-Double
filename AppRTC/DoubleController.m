@@ -126,6 +126,11 @@ typedef enum {
         } else if ([command isEqualToString:@"retract"]) {
             [[DRDouble sharedDouble] retractKickstands];
         }
+    }  else if ((command =[control valueForKey:@"turn"])) {
+        NSLog(@"turn");
+        NSLog(@"%@", command);
+        
+        [[DRDouble sharedDouble] turnByDegrees:[command floatValue]];
     } else {
         NSLog(@"%@", control);
     }
