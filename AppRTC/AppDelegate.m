@@ -15,6 +15,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    [UIApplication sharedApplication].idleTimerDisabled = YES;
     [RTCPeerConnectionFactory initializeSSL];
 
     return YES;
