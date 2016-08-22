@@ -16,6 +16,7 @@
 		5C80AAA61AAB71C700F21FFA /* ARTCVideoChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C80AAA51AAB71C700F21FFA /* ARTCVideoChatViewController.m */; };
 		5C80AAAA1AAB788A00F21FFA /* ARTCRoomTextInputViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C80AAA91AAB788A00F21FFA /* ARTCRoomTextInputViewCell.m */; };
 		D73F18E19C9C60BA3AEC6533 /* libPods-AppRTC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F721CD5337114122AA5E1F /* libPods-AppRTC.a */; };
+		F43E9F721D5BE7AE006F38D9 /* VideoProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = F43E9F711D5BE7AE006F38D9 /* VideoProcessor.m */; };
 		F481A8441D35BAF600231758 /* DoubleControlSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F481A8431D35BAF600231758 /* DoubleControlSDK.framework */; };
 		F481A8461D35E13700231758 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F481A8451D35E13700231758 /* ExternalAccessory.framework */; };
 		F4897AE81D3348880071C72A /* DoubleController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4897AE71D3348880071C72A /* DoubleController.m */; };
@@ -39,6 +40,8 @@
 		5C80AAA81AAB788A00F21FFA /* ARTCRoomTextInputViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARTCRoomTextInputViewCell.h; sourceTree = "<group>"; };
 		5C80AAA91AAB788A00F21FFA /* ARTCRoomTextInputViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARTCRoomTextInputViewCell.m; sourceTree = "<group>"; };
 		C7B527EEFE3254C4A6BFA40B /* Pods-AppRTC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppRTC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppRTC/Pods-AppRTC.debug.xcconfig"; sourceTree = "<group>"; };
+		F43E9F701D5BE7AE006F38D9 /* VideoProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoProcessor.h; sourceTree = "<group>"; };
+		F43E9F711D5BE7AE006F38D9 /* VideoProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoProcessor.m; sourceTree = "<group>"; };
 		F481A8431D35BAF600231758 /* DoubleControlSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DoubleControlSDK.framework; path = AppRTC/DoubleControlSDK.framework; sourceTree = "<group>"; };
 		F481A8451D35E13700231758 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		F481A8471D35E13700231758 /* AppRTC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AppRTC.entitlements; sourceTree = "<group>"; };
@@ -119,6 +122,8 @@
 				5C80AA881AAB5DF300F21FFA /* LaunchScreen.xib */,
 				F4897AE61D3348870071C72A /* DoubleController.h */,
 				F4897AE71D3348880071C72A /* DoubleController.m */,
+				F43E9F701D5BE7AE006F38D9 /* VideoProcessor.h */,
+				F43E9F711D5BE7AE006F38D9 /* VideoProcessor.m */,
 			);
 			name = App;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 			files = (
 				5C80AAAA1AAB788A00F21FFA /* ARTCRoomTextInputViewCell.m in Sources */,
 				F4897AE81D3348880071C72A /* DoubleController.m in Sources */,
+				F43E9F721D5BE7AE006F38D9 /* VideoProcessor.m in Sources */,
 				5C80AAA61AAB71C700F21FFA /* ARTCVideoChatViewController.m in Sources */,
 				5C80AAA11AAB717100F21FFA /* ARTCRoomViewController.m in Sources */,
 				5C80AA7F1AAB5DF300F21FFA /* AppDelegate.m in Sources */,

@@ -9,6 +9,7 @@
 #import "ARTCVideoChatViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import "DoubleController.h"
+#import "VideoProcessor.h"
 
 #define SERVER_HOST_URL @"https://apprtc.appspot.com"
 #define MY_SERVER_URL @"http://csse-s402g2:3000"
@@ -47,6 +48,7 @@
                                                object:nil];
     
     DoubleController *doubleController = [[DoubleController alloc] init];
+    self.videoProcessor = [[VideoProcessor alloc] init];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -64,7 +66,7 @@
     //Connect to the room
     [self disconnect];
     self.client = [[ARDAppClient alloc] initWithDelegate:self];
-    [self.client setServerHostUrl:MY_SERVER_URL];
+    [self.client setServerHostUrl:SERVER_HOST_URL];
     [self.client connectToRoomWithId:self.roomName options:nil];
     
     [self.urlLabel setText:self.roomUrl];
@@ -95,7 +97,7 @@
 
 - (void)setRoomName:(NSString *)roomName {
     _roomName = roomName;
-    self.roomUrl = [NSString stringWithFormat:@"%@/r/%@", MY_SERVER_URL, roomName];
+    self.roomUrl = [NSString stringWithFormat:@"%@/r/%@", SERVER_HOST_URL, roomName];
 }
 
 - (void)disconnect {
@@ -198,6 +200,7 @@
     }
     self.localVideoTrack = localVideoTrack;
     [self.localVideoTrack addRenderer:self.localView];
+    [self.localVideoTrack addRenderer:self.videoProcessor];
 }
 
 - (void)appClient:(ARDAppClient *)client didReceiveRemoteVideoTrack:(RTCVideoTrack *)remoteVideoTrack {

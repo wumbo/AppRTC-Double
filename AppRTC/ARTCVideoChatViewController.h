@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <libjingle_peerconnection/RTCEAGLVideoView.h>
 #import <AppRTC/ARDAppClient.h>
+#import "VideoProcessor.h"
 
 @interface ARTCVideoChatViewController : UIViewController <ARDAppClientDelegate, RTCEAGLVideoViewDelegate>
 
@@ -46,6 +47,9 @@
 //togle button parameter
 @property (assign, nonatomic) BOOL isAudioMute;
 @property (assign, nonatomic) BOOL isVideoMute;
+
+//My stuff
+@property (strong, nonatomic) VideoProcessor *videoProcessor;
 
 - (IBAction)audioButtonPressed:(id)sender;
 - (IBAction)videoButtonPressed:(id)sender;
