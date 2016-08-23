@@ -49,6 +49,14 @@
     
     DoubleController *doubleController = [[DoubleController alloc] init];
     self.videoProcessor = [[VideoProcessor alloc] init];
+    [self.videoProcessor addObserver:self];
+}
+
+- (void)showImage:(UIImage *)image {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.imageView.image = image;
+        [self.imageView sizeToFit];
+    });
 }
 
 - (void)viewWillAppear:(BOOL)animated {

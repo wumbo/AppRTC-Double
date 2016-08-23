@@ -221,6 +221,9 @@
                                     <constraint firstAttribute="width" constant="40" id="aRx-iH-5wU"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qkG-Ud-sb3">
+                                <rect key="frame" x="180" y="236" width="480" height="640"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -245,6 +248,7 @@
                         <outlet property="footerView" destination="dd3-fP-LRC" id="uOr-2m-vuC"/>
                         <outlet property="footerViewBottomConstraint" destination="zy4-uR-kWp" id="q2i-ux-MmX"/>
                         <outlet property="hangupButton" destination="GG8-K5-Ssv" id="BAr-G8-qJf"/>
+                        <outlet property="imageView" destination="qkG-Ud-sb3" id="9ql-pB-2sz"/>
                         <outlet property="localView" destination="pNG-Z1-33i" id="su4-ei-5ma"/>
                         <outlet property="localViewBottomConstraint" destination="s5p-iU-xdy" id="Cx3-07-m02"/>
                         <outlet property="localViewHeightConstraint" destination="ehF-uo-uGv" id="Hei-fI-veJ"/>

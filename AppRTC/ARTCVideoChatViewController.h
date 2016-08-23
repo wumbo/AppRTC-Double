@@ -50,6 +50,8 @@
 
 //My stuff
 @property (strong, nonatomic) VideoProcessor *videoProcessor;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+- (void)showImage:(UIImage *)image;
 
 - (IBAction)audioButtonPressed:(id)sender;
 - (IBAction)videoButtonPressed:(id)sender;

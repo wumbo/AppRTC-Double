@@ -11,4 +11,6 @@
 
 @interface VideoProcessor : NSObject <RTCVideoRenderer>
 
+-(void) addObserver:(id) observer;
+
 @end
