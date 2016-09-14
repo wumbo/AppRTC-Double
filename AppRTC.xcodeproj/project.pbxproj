@@ -17,6 +17,8 @@
 		5C80AAAA1AAB788A00F21FFA /* ARTCRoomTextInputViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C80AAA91AAB788A00F21FFA /* ARTCRoomTextInputViewCell.m */; };
 		D73F18E19C9C60BA3AEC6533 /* libPods-AppRTC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F721CD5337114122AA5E1F /* libPods-AppRTC.a */; };
 		F43E9F721D5BE7AE006F38D9 /* VideoProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = F43E9F711D5BE7AE006F38D9 /* VideoProcessor.mm */; };
+		F44EA1291D8924810010250C /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F44EA1281D8924810010250C /* opencv2.framework */; };
+		F468FB441D89410D00251AAB /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F468FB431D89410D00251AAB /* AssetsLibrary.framework */; };
 		F481A8441D35BAF600231758 /* DoubleControlSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F481A8431D35BAF600231758 /* DoubleControlSDK.framework */; };
 		F481A8461D35E13700231758 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F481A8451D35E13700231758 /* ExternalAccessory.framework */; };
 		F4897AE81D3348880071C72A /* DoubleController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4897AE71D3348880071C72A /* DoubleController.m */; };
@@ -42,6 +44,8 @@
 		C7B527EEFE3254C4A6BFA40B /* Pods-AppRTC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppRTC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppRTC/Pods-AppRTC.debug.xcconfig"; sourceTree = "<group>"; };
 		F43E9F701D5BE7AE006F38D9 /* VideoProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoProcessor.h; sourceTree = "<group>"; };
 		F43E9F711D5BE7AE006F38D9 /* VideoProcessor.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoProcessor.mm; sourceTree = "<group>"; };
+		F44EA1281D8924810010250C /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		F468FB431D89410D00251AAB /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		F481A8431D35BAF600231758 /* DoubleControlSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DoubleControlSDK.framework; path = AppRTC/DoubleControlSDK.framework; sourceTree = "<group>"; };
 		F481A8451D35E13700231758 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		F481A8471D35E13700231758 /* AppRTC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AppRTC.entitlements; sourceTree = "<group>"; };
@@ -54,8 +58,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F468FB441D89410D00251AAB /* AssetsLibrary.framework in Frameworks */,
 				F481A8461D35E13700231758 /* ExternalAccessory.framework in Frameworks */,
 				F481A8441D35BAF600231758 /* DoubleControlSDK.framework in Frameworks */,
+				F44EA1291D8924810010250C /* opencv2.framework in Frameworks */,
 				D73F18E19C9C60BA3AEC6533 /* libPods-AppRTC.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,6 +72,8 @@
 		5C6B7E47DBCCE1522C5BAE72 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F468FB431D89410D00251AAB /* AssetsLibrary.framework */,
+				F44EA1281D8924810010250C /* opencv2.framework */,
 				F481A8431D35BAF600231758 /* DoubleControlSDK.framework */,
 				F481A8451D35E13700231758 /* ExternalAccessory.framework */,
 				57F721CD5337114122AA5E1F /* libPods-AppRTC.a */,
@@ -186,7 +194,7 @@
 		5C80AA6E1AAB5DF300F21FFA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = ISBX;
 				TargetAttributes = {
 					5C80AA751AAB5DF300F21FFA = {
@@ -329,8 +337,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -340,6 +350,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -373,8 +384,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -383,6 +396,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -408,6 +422,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AppRTC",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = AppRTC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -433,6 +448,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AppRTC",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = AppRTC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -6,11 +6,12 @@
 //  Copyright © 2016 ISBX. All rights reserved.
 //
 
+#import <opencv2/opencv.hpp>
+
 #import <Foundation/Foundation.h>
 
 #import "VideoProcessor.h"
 #import <RTCI420Frame.h>
-#import <opencv2/opencv.hpp>
 
 #import "ARTCVideoChatViewController.h"
 
