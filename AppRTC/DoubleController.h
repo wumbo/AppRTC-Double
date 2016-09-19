@@ -10,8 +10,10 @@
 
 #import <SIOSocket/SIOSocket.h>
 #import "DoubleControlSDK/DoubleControlSDK.h"
+#import "ControlState.h"
 
 @interface DoubleController : NSObject <DRDoubleDelegate>
+@property ControlState *controlState;
 
 - (id) init;
 

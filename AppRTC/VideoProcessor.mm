@@ -7,6 +7,7 @@
 //
 
 #import <opencv2/opencv.hpp>
+#import <opencv2/aruco.hpp>
 
 #import <Foundation/Foundation.h>
 
@@ -17,11 +18,16 @@
 
 #define SKIP_FRAMES 0
 
+using namespace cv;
+
 
 @interface VideoProcessor ()
 
 @property ARTCVideoChatViewController *observer;
 @property int frameSkipper;
+
+@property Ptr<aruco::DetectorParameters> detectorParams;
+@property Ptr<aruco::Dictionary> dictionary;
 
 @end
 
@@ -30,6 +36,11 @@
 -(id) init {
     if (self = [super init]) {
         self.frameSkipper = 0;
+        self.detectedMarkerCount = 0;
+        
+        self.detectorParams = aruco::DetectorParameters::create();
+        self.detectorParams->doCornerRefinement = true;
+        self.dictionary = aruco::getPredefinedDictionary(cv::aruco::DICT_4X4_50);
     }
     return self;
 }
@@ -67,96 +78,18 @@
 }
 
 -(void) detectMarkers:(cv::Mat *)image {
-    int rows = image->rows;
-    int cols = image->cols;
+    std::vector<int> markerIds;
+    std::vector<std::vector<Point2f>> markerCorners, rejectedCandidates;
+    aruco::detectMarkers(*image, _dictionary, markerCorners, markerIds, self.detectorParams, rejectedCandidates);
+    cv::aruco::drawDetectedMarkers(*image, markerCorners, markerIds);
+    //std::vector<Vec3d> rvecs, tvecs;
+    //aruco::estimatePoseSingleMarkers(corners, 0.05, cameraMatrix, distCoeffs, rvecs, tvecs);
     
-    int yMaxR = 0;
-    int yMinR = rows;
-    int xMaxR = 0;
-    int xMinR = cols;
-    int yMaxY = 0;
-    int yMinY = rows;
-    int xMaxY = 0;
-    int xMinY = cols;
-    int yMaxB = 0;
-    int yMinB = rows;
-    int xMaxB = 0;
-    int xMinB = cols;
-    int yMaxW = 0;
-    int yMinW = rows;
-    int xMaxW = 0;
-    int xMinW = cols;
-    
-    for (int y = 0; y < rows; y++) {
-        for (int x = 0; x < cols; x++) {
-            cv::Vec3b intensity = image->at<cv::Vec3b>(y, x);
-            uchar red = intensity.val[0];
-            uchar green = intensity.val[1];
-            uchar blue = intensity.val[2];
-    
-            if (red > 240 && green > 50 && green < 170 && blue > 180) {
-                if (y > yMaxR) yMaxR = y;
-                if (y < yMinR) yMinR = y;
-                if (x > xMaxR) xMaxR = x;
-                if (x < xMinR) xMinR = x;
-            }
-            if (red > 170 && green > 240 && blue > 60 && blue < 150) {
-                if (y > yMaxY) yMaxY = y;
-                if (y < yMinY) yMinY = y;
-                if (x > xMaxY) xMaxY = x;
-                if (x < xMinY) xMinY = x;
-            }
-            if (red > 60 && red < 190 && green > 130 && blue > 230) {
-                if (y > yMaxB) yMaxB = y;
-                if (y < yMinB) yMinB = y;
-                if (x > xMaxB) xMaxB = x;
-                if (x < xMinB) xMinB = x;
-            }
-            if (red > 230 && green > 230 && blue > 230) {
-                if (y > yMaxW) yMaxW = y;
-                if (y < yMinW) yMinW = y;
-                if (x > xMaxW) xMaxW = x;
-                if (x < xMinW) xMinW = x;
-            }
-        }
+    self.detectedMarkerCount = (int)markerIds.size();
+    NSLog(@"Marker IDs");
+    for (int i = 0; i < markerIds.size(); i++) {
+        NSLog(@"%d", markerIds[i]);
     }
-
-    cv::rectangle(*image, cv::Point(xMinR, yMinR), cv::Point(xMaxR, yMaxR), cv::Scalar(0, 127, 31));
-    cv::rectangle(*image, cv::Point(xMinY, yMinY), cv::Point(xMaxY, yMaxY), cv::Scalar(63, 0, 127));
-    cv::rectangle(*image, cv::Point(xMinB, yMinB), cv::Point(xMaxB, yMaxB), cv::Scalar(127, 31, 0));
-    cv::rectangle(*image, cv::Point(xMinW, yMinW), cv::Point(xMaxW, yMaxW), cv::Scalar(0, 0, 0));
-    cv::putText(*image,
-                "Pink",
-                cv::Point((xMinR + xMaxR)/2 - 30, (yMinR + yMaxR)/2 + 7),
-                cv::FONT_HERSHEY_COMPLEX_SMALL,
-                1.0,
-                cv::Scalar(0,0,0),
-                1,
-                CV_AA);
-    cv::putText(*image,
-                "Yellow",
-                cv::Point((xMinY + xMaxY)/2 - 34, (yMinY + yMaxY)/2 + 7),
-                cv::FONT_HERSHEY_COMPLEX_SMALL,
-                1.0,
-                cv::Scalar(0,0,0),
-                1,
-                CV_AA);
-    cv::putText(*image,
-                "Blue",
-                cv::Point((xMinB + xMaxB)/2 - 30, (yMinB + yMaxB)/2 + 7),
-                cv::FONT_HERSHEY_COMPLEX_SMALL,
-                1.0,
-                cv::Scalar(0,0,0),
-                1,
-                CV_AA);
-    cv::putText(*image,
-                "White",
-                cv::Point((xMinW + xMaxW)/2 - 32, (yMinW + yMaxW)/2 + 7),
-                cv::FONT_HERSHEY_COMPLEX_SMALL,
-                1.0,
-                cv::Scalar(0,0,0),
-                1,
-                CV_AA);
 }
 
 /*
