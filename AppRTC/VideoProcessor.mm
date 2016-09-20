@@ -29,6 +29,9 @@ using namespace cv;
 @property Ptr<aruco::DetectorParameters> detectorParams;
 @property Ptr<aruco::Dictionary> dictionary;
 
+@property int totalFrames;
+@property int successfulFrames;
+
 @end
 
 @implementation VideoProcessor
@@ -37,6 +40,8 @@ using namespace cv;
     if (self = [super init]) {
         self.frameSkipper = 0;
         self.detectedMarkerCount = 0;
+        self.totalFrames = 0;
+        self.successfulFrames = 0;
         
         self.detectorParams = aruco::DetectorParameters::create();
         self.detectorParams->doCornerRefinement = true;
@@ -90,6 +95,12 @@ using namespace cv;
     for (int i = 0; i < markerIds.size(); i++) {
         NSLog(@"%d", markerIds[i]);
     }
+    
+    self.totalFrames ++;
+    if (markerIds.size() > 0) {
+        self.successfulFrames++;
+    }
+    NSLog(@"Success rate: %f %%", 100 * ((float)self.successfulFrames)/self.totalFrames);
 }
 
 /*
@@ -100,6 +111,7 @@ using namespace cv;
 {
     NSData *data = [NSData dataWithBytes:cvMat.data length:cvMat.elemSize()*cvMat.total()];
     CGColorSpaceRef colorSpace;
+    
     
     if (cvMat.elemSize() == 1) {
         colorSpace = CGColorSpaceCreateDeviceGray();
