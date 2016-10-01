@@ -17,6 +17,8 @@
 @property (weak, atomic) VideoProcessor *videoProcessor;
 @property (weak, atomic) DoubleController *doubleController;
 
+@property int timeSinceLastDetection;
+
 -(id) initWithVideoProcessor: (VideoProcessor *) videoProcessor doubleController: (DoubleController *) doubleController;
 -(void) navigate;
 

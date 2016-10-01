@@ -80,7 +80,7 @@
     //Connect to the room
     [self disconnect];
     self.client = [[ARDAppClient alloc] initWithDelegate:self];
-    [self.client setServerHostUrl:SERVER_HOST_URL];
+    [self.client setServerHostUrl:MY_SERVER_URL];
     [self.client connectToRoomWithId:self.roomName options:nil];
     
     [self.urlLabel setText:self.roomUrl];
@@ -111,7 +111,7 @@
 
 - (void)setRoomName:(NSString *)roomName {
     _roomName = roomName;
-    self.roomUrl = [NSString stringWithFormat:@"%@/r/%@", SERVER_HOST_URL, roomName];
+    self.roomUrl = [NSString stringWithFormat:@"%@/r/%@", MY_SERVER_URL, roomName];
 }
 
 - (void)disconnect {

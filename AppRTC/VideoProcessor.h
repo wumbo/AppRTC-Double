@@ -12,6 +12,7 @@
 @interface VideoProcessor : NSObject <RTCVideoRenderer>
 
 @property (atomic) int detectedMarkerCount;
+@property (atomic) int currentMarkerId;
 
 -(void) addObserver:(id) observer;
 

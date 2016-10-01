@@ -89,6 +89,7 @@ using namespace cv;
     NSLog(@"Marker IDs");
     for (int i = 0; i < markerIds.size(); i++) {
         NSLog(@"%d", markerIds[i]);
+        self.currentMarkerId = markerIds[i];
     }
 }
 
