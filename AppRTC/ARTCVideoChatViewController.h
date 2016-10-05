@@ -10,6 +10,7 @@
 #import <libjingle_peerconnection/RTCEAGLVideoView.h>
 #import <AppRTC/ARDAppClient.h>
 #import "VideoProcessor.h"
+#import "DoubleController.h"
 
 @interface ARTCVideoChatViewController : UIViewController <ARDAppClientDelegate, RTCEAGLVideoViewDelegate>
 
@@ -51,6 +52,7 @@
 //My stuff
 @property (strong, nonatomic) VideoProcessor *videoProcessor;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) DoubleController *doubleController;
 - (void)showImage:(UIImage *)image;
 
 - (IBAction)audioButtonPressed:(id)sender;

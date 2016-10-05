@@ -11,10 +11,11 @@
 #import <SIOSocket/SIOSocket.h>
 #import "DoubleControlSDK/DoubleControlSDK.h"
 #import "ControlState.h"
+#import "VideoProcessor.h"
 
 @interface DoubleController : NSObject <DRDoubleDelegate>
 @property ControlState *controlState;
 
-- (id) init;
+- (id) initWithVideoProcessor: (VideoProcessor *)videoProcessor;
 
 @end

@@ -9,16 +9,29 @@
 #import "DoubleController.h"
 #import <UIKit/UIKit.h>
 
+#import "Follower.h"
+#import "VideoProcessor.h"
+
 @interface DoubleController ()
 
 @property SIOSocket *socket;
+@property (weak, atomic) VideoProcessor *videoProcessor;
+
+@property bool following;
+@property bool navigating;
+
+@property Follower *follower;
 
 @end
 
 @implementation DoubleController
 
-- (id) init {
+- (id) initWithVideoProcessor: (VideoProcessor *)videoProcessor {
     if (self = [super init]) {
+        self.videoProcessor = videoProcessor;
+        self.following = false;
+        self.navigating = false;
+        
         [DRDouble sharedDouble].delegate = self;
         NSLog(@"SDK Version: %@", kDoubleBasicSDKVersion);
         
@@ -90,11 +103,27 @@
         } else if ([command isEqualToString:@"retract"]) {
             [[DRDouble sharedDouble] retractKickstands];
         }
-    }  else if ((command =[control valueForKey:@"turn"])) {
+    } else if ((command = [control valueForKey:@"turn"])) {
         NSLog(@"turn");
         NSLog(@"%@", command);
         
         [[DRDouble sharedDouble] turnByDegrees:[command floatValue]];
+    } else if ((command = [control valueForKey:@"follow"])) {
+        NSLog(@"follow");
+        if (!self.following && !self.navigating) {
+            self.follower = [[Follower alloc] initWithVideoProcessor:self.videoProcessor doubleController:self];
+            NSThread* myThread = [[NSThread alloc] initWithTarget:self.follower
+                                                         selector:@selector(follow)
+                                                           object:nil];
+            [myThread start];
+            self.following = true;
+        } else if (self.following) {
+            self.follower.ended = true;
+            self.following = false;
+        }
+    } else if ((command = [control valueForKey:@"navigate"])) {
+        
+        NSLog(@"navigate");
     } else {
         NSLog(@"%@", control);
     }

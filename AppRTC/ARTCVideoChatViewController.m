@@ -10,7 +10,6 @@
 #import <AVFoundation/AVFoundation.h>
 #import "DoubleController.h"
 #import "VideoProcessor.h"
-#import "Navigator.h"
 
 #define SERVER_HOST_URL @"https://apprtc.appspot.com"
 #define MY_SERVER_URL @"http://csse-s402g2:3000"
@@ -48,21 +47,16 @@
                                                  name:@"UIDeviceOrientationDidChangeNotification"
                                                object:nil];
     
-    DoubleController *doubleController = [[DoubleController alloc] init];
     self.videoProcessor = [[VideoProcessor alloc] init];
+    self.doubleController = [[DoubleController alloc] initWithVideoProcessor:self.videoProcessor];
     [self.videoProcessor addObserver:self];
-    Navigator *navigator = [[Navigator alloc] initWithVideoProcessor:self.videoProcessor doubleController:doubleController];
-    NSThread* myThread = [[NSThread alloc] initWithTarget:navigator
-                                                 selector:@selector(navigate)
-                                                   object:nil];
-    [myThread start];
 }
 
 - (void)showImage:(UIImage *)image {
-    dispatch_async(dispatch_get_main_queue(), ^{
+    /*dispatch_async(dispatch_get_main_queue(), ^{
         self.imageView.image = image;
         [self.imageView sizeToFit];
-    });
+    });*/
 }
 
 - (void)viewWillAppear:(BOOL)animated {

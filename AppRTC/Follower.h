@@ -12,14 +12,16 @@
 #import "DoubleController.h"
 #import "ControlState.h"
 
-@interface Navigator : NSObject
+@interface Follower : NSObject
 
 @property (weak, atomic) VideoProcessor *videoProcessor;
 @property (weak, atomic) DoubleController *doubleController;
 
+@property (atomic) bool ended;
+
 @property int timeSinceLastDetection;
 
 -(id) initWithVideoProcessor: (VideoProcessor *) videoProcessor doubleController: (DoubleController *) doubleController;
--(void) navigate;
+-(void) follow;
 
 @end

@@ -22,7 +22,7 @@
 		F481A8441D35BAF600231758 /* DoubleControlSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F481A8431D35BAF600231758 /* DoubleControlSDK.framework */; };
 		F481A8461D35E13700231758 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F481A8451D35E13700231758 /* ExternalAccessory.framework */; };
 		F4897AE81D3348880071C72A /* DoubleController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4897AE71D3348880071C72A /* DoubleController.m */; };
-		F4E016301D8F93EC00E33BC6 /* Navigator.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E0162F1D8F93EC00E33BC6 /* Navigator.m */; };
+		F4E016301D8F93EC00E33BC6 /* Follower.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E0162F1D8F93EC00E33BC6 /* Follower.m */; };
 		F4E016331D8FAC8B00E33BC6 /* ControlState.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E016321D8FAC8B00E33BC6 /* ControlState.m */; };
 /* End PBXBuildFile section */
 
@@ -53,8 +53,8 @@
 		F481A8471D35E13700231758 /* AppRTC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AppRTC.entitlements; sourceTree = "<group>"; };
 		F4897AE61D3348870071C72A /* DoubleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubleController.h; sourceTree = "<group>"; };
 		F4897AE71D3348880071C72A /* DoubleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoubleController.m; sourceTree = "<group>"; };
-		F4E0162E1D8F93EC00E33BC6 /* Navigator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Navigator.h; sourceTree = "<group>"; };
-		F4E0162F1D8F93EC00E33BC6 /* Navigator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Navigator.m; sourceTree = "<group>"; };
+		F4E0162E1D8F93EC00E33BC6 /* Follower.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Follower.h; sourceTree = "<group>"; };
+		F4E0162F1D8F93EC00E33BC6 /* Follower.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Follower.m; sourceTree = "<group>"; };
 		F4E016311D8FAC8B00E33BC6 /* ControlState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlState.h; sourceTree = "<group>"; };
 		F4E016321D8FAC8B00E33BC6 /* ControlState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlState.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,8 +138,8 @@
 				F4897AE71D3348880071C72A /* DoubleController.m */,
 				F43E9F701D5BE7AE006F38D9 /* VideoProcessor.h */,
 				F43E9F711D5BE7AE006F38D9 /* VideoProcessor.mm */,
-				F4E0162E1D8F93EC00E33BC6 /* Navigator.h */,
-				F4E0162F1D8F93EC00E33BC6 /* Navigator.m */,
+				F4E0162E1D8F93EC00E33BC6 /* Follower.h */,
+				F4E0162F1D8F93EC00E33BC6 /* Follower.m */,
 				F4E016311D8FAC8B00E33BC6 /* ControlState.h */,
 				F4E016321D8FAC8B00E33BC6 /* ControlState.m */,
 			);
@@ -303,7 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C80AAAA1AAB788A00F21FFA /* ARTCRoomTextInputViewCell.m in Sources */,
-				F4E016301D8F93EC00E33BC6 /* Navigator.m in Sources */,
+				F4E016301D8F93EC00E33BC6 /* Follower.m in Sources */,
 				F4897AE81D3348880071C72A /* DoubleController.m in Sources */,
 				F43E9F721D5BE7AE006F38D9 /* VideoProcessor.mm in Sources */,
 				5C80AAA61AAB71C700F21FFA /* ARTCVideoChatViewController.m in Sources */,

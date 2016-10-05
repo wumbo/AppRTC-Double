@@ -13,6 +13,8 @@
 
 @property (atomic) int detectedMarkerCount;
 @property (atomic) int currentMarkerId;
+@property (atomic) int markerXPosition;
+@property (atomic) int markerSize;
 
 -(void) addObserver:(id) observer;
 

@@ -82,13 +82,19 @@ using namespace cv;
     std::vector<std::vector<Point2f>> markerCorners, rejectedCandidates;
     aruco::detectMarkers(*image, _dictionary, markerCorners, markerIds, self.detectorParams, rejectedCandidates);
     cv::aruco::drawDetectedMarkers(*image, markerCorners, markerIds);
-    //std::vector<Vec3d> rvecs, tvecs;
-    //aruco::estimatePoseSingleMarkers(corners, 0.05, cameraMatrix, distCoeffs, rvecs, tvecs);
+    if (markerIds.size() > 0) {
+        self.markerXPosition = int((markerCorners[0][0].x + markerCorners[0][1].x + markerCorners[0][2].x + markerCorners[0][3].x) / 4.0);
+        int x0 = markerCorners[0][0].x;
+        int x1 = markerCorners[0][1].x;
+        int y0 = markerCorners[0][0].y;
+        int y1 = markerCorners[0][1].y;
+        self.markerSize = (int)sqrt((x1 - x0) * (x1 - x0) + (y1 - y0) * (y1 - y0));
+    }
     
     self.detectedMarkerCount = (int)markerIds.size();
-    NSLog(@"Marker IDs");
+    //NSLog(@"Marker IDs");
     for (int i = 0; i < markerIds.size(); i++) {
-        NSLog(@"%d", markerIds[i]);
+        //NSLog(@"%d", markerIds[i]);
         self.currentMarkerId = markerIds[i];
     }
 }
