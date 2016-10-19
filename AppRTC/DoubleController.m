@@ -11,6 +11,7 @@
 
 #import "Follower.h"
 #import "VideoProcessor.h"
+#import "Navigator.h"
 
 @interface DoubleController ()
 
@@ -21,6 +22,7 @@
 @property bool navigating;
 
 @property Follower *follower;
+@property Navigator *navigator;
 
 @end
 
@@ -41,6 +43,11 @@
             self.socket = socket;
             __weak typeof(self) weakSelf = self;
             self.socket.onConnect = ^() {
+                NSString *serial = [DRDouble sharedDouble].serial;
+                NSString *last6 = [serial substringFromIndex:3];
+                NSLog(@"HELLOOOOOOOOOOO");
+                NSLog(@"%@", last6);
+                
                 SIOParameterArray *args = [[SIOParameterArray alloc] initWithObjects:@{@"serial": @"25"}, nil];
                 [weakSelf.socket emit:@"info" args:args];
                 NSLog(@"---------- Sending info");
@@ -122,8 +129,20 @@
             self.following = false;
         }
     } else if ((command = [control valueForKey:@"navigate"])) {
-        
         NSLog(@"navigate");
+        
+        if (!self.following && !self.navigating) {
+            self.navigator = [[Navigator alloc] initWithVideoProcessor:self.videoProcessor doubleController:self];
+            NSThread* myThread = [[NSThread alloc] initWithTarget:self.navigator
+                                                         selector:@selector(navigate)
+                                                           object:nil];
+            [myThread start];
+            self.navigating = true;
+        } else if (self.navigating) {
+            NSLog(@"Ending navigation");
+            self.navigator.ended = true;
+            self.navigating = false;
+        }
     } else {
         NSLog(@"%@", control);
     }

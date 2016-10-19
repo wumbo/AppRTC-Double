@@ -18,6 +18,7 @@
 		D73F18E19C9C60BA3AEC6533 /* libPods-AppRTC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F721CD5337114122AA5E1F /* libPods-AppRTC.a */; };
 		F43E9F721D5BE7AE006F38D9 /* VideoProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = F43E9F711D5BE7AE006F38D9 /* VideoProcessor.mm */; };
 		F44EA1291D8924810010250C /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F44EA1281D8924810010250C /* opencv2.framework */; };
+		F45A4FC81DA5009E00B13ECC /* Navigator.m in Sources */ = {isa = PBXBuildFile; fileRef = F45A4FC71DA5009E00B13ECC /* Navigator.m */; };
 		F468FB441D89410D00251AAB /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F468FB431D89410D00251AAB /* AssetsLibrary.framework */; };
 		F481A8441D35BAF600231758 /* DoubleControlSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F481A8431D35BAF600231758 /* DoubleControlSDK.framework */; };
 		F481A8461D35E13700231758 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F481A8451D35E13700231758 /* ExternalAccessory.framework */; };
@@ -47,6 +48,8 @@
 		F43E9F701D5BE7AE006F38D9 /* VideoProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoProcessor.h; sourceTree = "<group>"; };
 		F43E9F711D5BE7AE006F38D9 /* VideoProcessor.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoProcessor.mm; sourceTree = "<group>"; };
 		F44EA1281D8924810010250C /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		F45A4FC61DA5009E00B13ECC /* Navigator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Navigator.h; sourceTree = "<group>"; };
+		F45A4FC71DA5009E00B13ECC /* Navigator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Navigator.m; sourceTree = "<group>"; };
 		F468FB431D89410D00251AAB /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		F481A8431D35BAF600231758 /* DoubleControlSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DoubleControlSDK.framework; path = AppRTC/DoubleControlSDK.framework; sourceTree = "<group>"; };
 		F481A8451D35E13700231758 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
@@ -142,6 +145,8 @@
 				F4E0162F1D8F93EC00E33BC6 /* Follower.m */,
 				F4E016311D8FAC8B00E33BC6 /* ControlState.h */,
 				F4E016321D8FAC8B00E33BC6 /* ControlState.m */,
+				F45A4FC61DA5009E00B13ECC /* Navigator.h */,
+				F45A4FC71DA5009E00B13ECC /* Navigator.m */,
 			);
 			name = App;
 			sourceTree = "<group>";
@@ -305,6 +310,7 @@
 				5C80AAAA1AAB788A00F21FFA /* ARTCRoomTextInputViewCell.m in Sources */,
 				F4E016301D8F93EC00E33BC6 /* Follower.m in Sources */,
 				F4897AE81D3348880071C72A /* DoubleController.m in Sources */,
+				F45A4FC81DA5009E00B13ECC /* Navigator.m in Sources */,
 				F43E9F721D5BE7AE006F38D9 /* VideoProcessor.mm in Sources */,
 				5C80AAA61AAB71C700F21FFA /* ARTCVideoChatViewController.m in Sources */,
 				5C80AAA11AAB717100F21FFA /* ARTCRoomViewController.m in Sources */,
@@ -431,6 +437,7 @@
 				CODE_SIGN_ENTITLEMENTS = AppRTC/AppRTC.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = Z5PW237P85;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AppRTC",
@@ -457,6 +464,7 @@
 				CODE_SIGN_ENTITLEMENTS = AppRTC/AppRTC.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = Z5PW237P85;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AppRTC",

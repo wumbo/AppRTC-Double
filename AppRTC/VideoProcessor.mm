@@ -37,6 +37,7 @@ using namespace cv;
     if (self = [super init]) {
         self.frameSkipper = 0;
         self.detectedMarkerCount = 0;
+        self.currentMarkerId = -1;
         
         self.detectorParams = aruco::DetectorParameters::create();
         self.detectorParams->doCornerRefinement = true;
