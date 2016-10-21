@@ -106,7 +106,7 @@ dir_t hint[] = {RIGHT, LEFT, RIGHT, LEFT, RIGHT, NONE, NONE};
                 
                 if (hint[self.currentMarker] == LEFT) {
                     theta += 8;
-                } else if (hint[self.currentMarker] == RIGHT) {
+                } else if (self.currentMarker == 1 || self.currentMarker == 3 || self.currentMarker == 5) {
                     theta -= 8;
                 }
                 
@@ -197,7 +197,7 @@ dir_t hint[] = {RIGHT, LEFT, RIGHT, LEFT, RIGHT, NONE, NONE};
                 
                 if (hint[self.currentMarker] == LEFT) {
                     theta += 8;
-                } else if (hint[self.currentMarker] == RIGHT) {
+                } else if (self.currentMarker == 1 || self.currentMarker == 3 || self.currentMarker == 5) {
                     theta -= 8;
                 }
                 

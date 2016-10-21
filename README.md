@@ -144,3 +144,31 @@ If you'd like to contribute, please fork the repository and issue pull requests.
 ## Known Issues
 The following are known issues that are being worked and should be released shortly:
 * None at this time
+
+## Double Modifications
+
+This application has been modified to work with the Double robot. The main things that were added are as follows:
+
+### Double Controller
+
+This uses the Double Control SDK to communicate with the Double. It is instantiated when a video call is set up and uses a WebSocket connection to communicate with the Double Control Server. It has a control state which is updated when it receives control data of the connection. This state is then used to instruct the Double on which way to go when it polls for updates with the `doubleDriveShouldUpdate:` method.
+
+### Video Processor
+
+The Video Processor takes frames of video from the iPad camera and detects fiducial markers in them, after converting them to RGB using OpenCV. The size and position of the markers is calculated based on the marker corners. This information is stored so that other modules can access it. A frame skipper is included to inmprove performance, but this is enabled by default as the iPad can easily detect markers in real time.
+
+### Follower
+
+The follower is instantiated whenever the driver instructs the Double to follow. It uses a state machine which updates its state every 0.1 seconds, and gets information from the Video Processor. The state machine can be found in the report. It always looks for the marker with ID 14, but this could easily be changed in the source code.
+
+### Navigator
+
+The navigator works in a similar way to the follower, but instead follows a series of markers, defined at the top of Navigator.m. It uses two variables, dirs and hint, two know which way it should turn to get to the next marker, and which side of that marker it should drive on. It has only three states: turning, where it looks for the next marker; forward, where it is driving towards the next marker until it cannot see it anymore or it is too large; and waiting, where it has lost sight of the marker and will keep going if it finds it again, or go to the next one if it times out.
+
+### Installation requirements
+
+For the most part, following the earlier installation instructions should suffice. However, due to size constraints, OpenCV is not included. Furthermore a specific version of OpenCV is needed: OpenCV contrib (includes ArUco) for iOS. This can be downloaded here: 
+
+http://pullrequest.opencv.org/buildbot/master-contrib_iOS-mac/builds/286
+
+Then it must be manually included into the project. Make sure that it is linked to the binary in the build phases tab of the project settings.
